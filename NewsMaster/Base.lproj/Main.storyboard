@@ -98,6 +98,7 @@
                     </view>
                     <connections>
                         <outlet property="FailedLabel" destination="CL4-2L-gf3" id="hec-fT-4ql"/>
+                        <outlet property="barUIVIew" destination="6b6-vz-SEK" id="FWq-Lk-Q0Q"/>
                         <outlet property="sourceLabel" destination="nyP-nc-6hq" id="8YP-cL-Thz"/>
                         <outlet property="stackView" destination="IEa-5v-YZw" id="Ecx-iQ-h1e"/>
                         <outlet property="webView" destination="YHI-Vp-UaA" id="5IK-oW-TVI"/>

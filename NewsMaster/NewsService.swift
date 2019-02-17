@@ -46,7 +46,7 @@ class NewsService {
         }
         var urlRequest = URLRequest(url: url)
         /*===------------------------ ADD YOUR API HERE ------------------------===*/
-        urlRequest.addValue("YOUR-API-CODE", forHTTPHeaderField: "X-Api-Key")
+        urlRequest.addValue("4f03e85e42594a1aa1633ad351bdd14c", forHTTPHeaderField: "X-Api-Key")
         
         // Create tasks
         let task = URLSession.shared.dataTask(with: urlRequest) { data, response, error in

@@ -49,6 +49,7 @@ class MasterViewController: UITableViewController, UISearchBarDelegate {
                 
                 alertController.addAction(okAction)
                 self.present(alertController, animated: true, completion: nil)
+                NotificationCenter.default.post(name: .didReceiveData, object: nil, userInfo: nil)
             }
             
             // Print error information
@@ -69,7 +70,9 @@ class MasterViewController: UITableViewController, UISearchBarDelegate {
             self.present(alertController, animated: true, completion: nil)
         }
         else {
-            
+            let newsPiece = self.news[0]
+            let userInfo = ["url": newsPiece.url, "source": newsPiece.source.name]
+            NotificationCenter.default.post(name: .didReceiveData, object: nil, userInfo: userInfo)
             /*
             let detailViewController = self.splitViewController!.viewControllers[1] as! DetailViewController
             if detailViewController.url == nil && news.count > 0 {
@@ -83,7 +86,7 @@ class MasterViewController: UITableViewController, UISearchBarDelegate {
                 let urlRequest = URLRequest(url: URL(string: newsPiece.url)!)
                 detailViewController.webView.load(urlRequest)
             }
-             */
+            */
             self.tableView.reloadData()
         }
     }
@@ -138,7 +141,6 @@ class MasterViewController: UITableViewController, UISearchBarDelegate {
         let newsPiece = news[index]
         
         dest.sourceText = newsPiece.source.name
-        dest.url = URL(string: newsPiece.url)
-        dest.color = navigationController?.navigationBar.barTintColor
+        dest.urlString = newsPiece.url
     }
 }
