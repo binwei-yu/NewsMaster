@@ -113,7 +113,7 @@ class MasterViewController: UITableViewController, UISearchBarDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "NewsCell", for: indexPath) as? NewsViewCell else {
             fatalError("Error: Unknown error")
         }
-        
+        print(indexPath.row)
         let newsPiece = news[indexPath.row]
         cell.TitleLabel.text = newsPiece.title
         cell.AuthorLabel.text = newsPiece.author
